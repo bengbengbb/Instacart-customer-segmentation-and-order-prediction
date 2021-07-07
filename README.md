@@ -1,5 +1,13 @@
-# Instacart-customer-segmentation-and-recommendation-system
+# Instacart-customer-segmentation-and-order-prediction
 
 This is a project in collaboration with Niaoniao Ma and Susannah Schulze.
 
-In this project we used naive lasso and two-step lasso to predict the loan propensity of different households. We then used bootstrap to estimate the model uncertainty.
+Data source: https://www.kaggle.com/psparks/instacart-market-basket-analysis
+
+In order to understand customer behavior and build a product recommendation system, we used principal component analysis and k-means clustering to divide Instacart’s customers into three segments. Cluster 1 are infrequent customers, as they purchased significantly less items than the other two clusters. They also purchased quick-bite items such as soft drinks and frozen meals more frequently than the other clusters. Cluster 2 our loyal users, as they have purchased the most items. While they come back for fresh fruits and vegetables, they also are very likely to purchase items from the baby food formula aisle. Young parents who are too busy to make a run to the grocery store would fit into this cluster. The last cluster, Cluster 3, is similar to Cluster 2, but the average number of items purchased across categories is less. This means they have ordered from Instacart less. Cluster 3 is where Instacart should focus on, to increase consumption to match Cluster 2.
+
+We then used random forest to predict a customer’s next order. From our model, the total number of times a user purchased a product and the ratio that the product has been reordered are the two most significant indicators of what the user will purchase in his next order. Other than these two, the average days between orders, the amount of a product added to cart, and the hour of the day also are important indicators. 
+
+From our exploratory data analysis, we found that fruits, vegetables, and milk are among the most reordered products. This information combined with our random forest order prediction model can help better manage inventory and stock up on products with high demands to avoid losing orders due to inventory shortage. We also analyzed the time when most people place their orders and found that people are more likely to place their orders during the weekends and most orders are placed between 9a.m. to 4p.m.. This would be a good time to send push notifications, promotional information and personalized recommendations that could lead to more sales. Most users typically place orders every 7 days or every 30 days. This indicates that most users purchase groceries periodically. We also noticed that 88% of orders include reordered products. We can assume that most customers have a grocery routine where they regularly buy the same products. This can help create a customized list of products that updates according to the user’s purchasing habits and routine to provide a better user experience and easier ordering process.
+
+
